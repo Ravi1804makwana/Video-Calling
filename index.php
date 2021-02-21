@@ -1,6 +1,7 @@
 <html>
 <head>
   <script src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <script src="https://kit.fontawesome.com/e6addfb9e1.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -14,13 +15,13 @@
     }
     #end{
       position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       bottom: 20px;
-      right: 50%;
-      z-index: 99;
-      border: none;  
     }
     #remoteVideo{
-	margin-left: auto;
+	   margin-left: auto;
     margin-right: auto;
     display: block;
     height: 100%;
@@ -32,13 +33,16 @@
   
   <video class="col-lg-3 col-sm-2 col-md-2 col-4" id="localVideo" autoplay muted></video>
   
-  <a href="../registerappointment.php"><img class="col-lg-1 col-sm-1 col-md-1 col-2" id="end" src="call-end.png"></a>
+  <div class="row container">
+    <div id="end" class="btn-group btn-group-lg col-lg-6" style="z-index: 100;">
+      <div onclick="UnMuteVideo();" class="btn btn-primary" style="border-radius: 50px 0px 0px 50px;"><i class="fas fa-video" style="font-size: 45px;"></i></div>
+      <div onclick="MuteVideo()" class="btn btn-primary"><i class="fas fa-video-slash" style="font-size: 45px;"></i></i></div>
+      <div class="btn btn-danger"><a href="../registerappointment.php"><i class="fas fa-phone" style="font-size: 45px;color: white;"></i></a></div>
+      <div onclick="UnMuteAudio()" class="btn btn-primary"><i class="fas fa-microphone-slash" style="font-size: 45px;"></i></div>
+      <div onclick="MuteAudio()" class="btn btn-primary" style="border-radius: 0px 50px 50px 0px;"><i class="fas fa-microphone" style="font-size: 45px;"></i></div>
+    </div>
+  </div>
   
-  <button onclick="MuteAudio();">MuteMic</button>
-  <button onclick="UnMuteAudio();">UnMuteMic</button>
-  <button onclick="MuteVideo();">MuteVideo</button>
-  <button onclick="UnMuteVideo();">UnMuteVideo</button>
-
   <script src="script.js"></script>
   <script src="myjs.js"></script>
 
